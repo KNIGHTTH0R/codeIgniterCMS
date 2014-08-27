@@ -1,0 +1,10 @@
+66bd45e,victoravila,8 minutes ago,Added two new files 'Frontend_Controller.php' and 'Admin_Controller.php'. Modified application/config.php and added '__autoload' function to use the two new base controller for admin and public site.,,
+7e533f2,victoravila,23 minutes ago,Created MY_Controller as the base controller, create a constructor and set data array variable, and modified welcome.php controller to check if it is working.
+8dfbf29,victoravila,50 minutes ago,Done with framework installation. Modified index.php for choosing environment. Sets up database configuration. Added .htaccess file to remove 'index.php' in the browser.,,
+3f1b6d3,victoravila,2 hours ago,Added fresh codeigniter framework to directory.,,
+f9977d8,victoravila,2 hours ago,Commits .gitignore and .gitattributes file,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,"git log --since='last month' --pretty=format:'%h,%an,%ar,%s' > log.csv",
