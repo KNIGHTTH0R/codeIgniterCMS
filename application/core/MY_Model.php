@@ -13,8 +13,37 @@ class MY_Model extends CI_Model {
 		parent::__construct();
 	}
 
-	public function get();
-	public function get_by();
-	public function save();
-	public function delete();
+	public function get($id = NULL, $single = FALSE) {
+		if($id != NULL) {
+			$filter = $this->_primary_filter;
+			$id = $filter($id);
+			$this->db->where($this->_primary_key, $id);
+			$method = 'row';
+		}
+		elseif ($single == TRUE) {
+			$method = 'row';
+		}
+		else {
+			$method = 'result';
+		}
+
+		if(!count($this->db->ar_orderby)) {
+			$this->db->order_by($this->_order_by);
+		}
+
+		return $this->db->get($this->_table_name)->$method();
+	}
+
+	public function get_by($where, $single = FALSE) {
+		$this->db->where($where);
+		return $this->get(NULL, $single);
+	}
+
+	public function save() {
+
+	}
+	
+	public function delete() {
+
+	}
 }
