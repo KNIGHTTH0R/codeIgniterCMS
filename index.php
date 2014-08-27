@@ -19,7 +19,7 @@
  *
  */
 	
-	switch (dirname(__FILE__)) {
+	/*switch (dirname(__FILE__)) {
 		case 'http://localhost/codeigniterCMS/':
 			define('ENVIRONMENT', 'development');		
 			break;
@@ -27,7 +27,9 @@
 		default:
 			define('ENVIRONMENT', 'production');
 			break;
-	}
+	}*/
+
+	define('ENVIRONMENT', 'development');
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
