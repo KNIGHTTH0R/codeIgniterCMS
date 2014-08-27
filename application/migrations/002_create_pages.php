@@ -1,5 +1,5 @@
 <?php
-class Migration_Create_user extends CI_Migration {
+class Migration_Create_pages extends CI_Migration {
 
 	public function up() {
 		$this->dbforge->add_field(array(
@@ -9,24 +9,27 @@ class Migration_Create_user extends CI_Migration {
 				'unsigned' => TRUE,
 				'auto_increment' => TRUE
 			),
-			'email' => array(
+			'title' => array(
 				'type' => 'VARCHAR',
 				'constraint' => '100',
 			),
-			'password' => array(
-				'type' => 'VARCHAR',
-				'constraint' => '128',
-			),
-			'name' => array(
+			'slug' => array(
 				'type' => 'VARCHAR',
 				'constraint' => '100',
+			),
+			'order' => array(
+				'type' => 'INT',
+				'constraint' => '11',
+			),
+			'body' => array(
+				'type' => 'TEXT'
 			),
 		));
 		$this->dbforge->add_key('id');
-		$this->dbforge->create_table('users');
+		$this->dbforge->create_table('pages');
 	}
 
 	public function down() {
-		$this->dbforge->drop_table('users');
+		$this->dbforge->drop_table('pages');
 	}
 }
