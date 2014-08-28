@@ -19,4 +19,8 @@ class Page extends Frontend_Controller {
 		$id = $this->page_m->save($data, 3);
 		var_dump($id);
 	}
+
+	public function delete() {
+		$this->page_m->delete(3);
+	}
 }
