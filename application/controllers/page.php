@@ -14,13 +14,16 @@ class Page extends Frontend_Controller {
 
 	public function save() {
 		$data = array(
-			'body' => 'This is the new body',
+			'title' => 'title',
+			'slug' => 'title',
+			'order' => '2',
+			'body' => 'This is the new body'
 		);
-		$id = $this->page_m->save($data, 3);
+		$id = $this->page_m->save($data);
 		var_dump($id);
 	}
 
 	public function delete() {
-		$this->page_m->delete(3);
+		$this->page_m->delete(4);
 	}
 }
